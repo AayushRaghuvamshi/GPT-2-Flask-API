@@ -8,11 +8,27 @@
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  flex-direction: column;
-  background: #040d15;
+  background: linear-gradient(#4671ea, #ac34e7);
+}
+.header {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  padding: 20px;
+}
+.text {
+  font-size: 5em;
+  letter-spacing: 10px;
+  font-family: monospace;
+  border-right: 5px solid;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s steps(26), cursor 0.4s step-end infinite alternate;
 }
 button {
   position: relative;
@@ -28,8 +44,41 @@ button {
   overflow: hidden;
   background: linear-gradient(90deg, #0162c8, #55e7fc);
 }
+.wrapper {
+  width: 600px;
+  background: #fff;
+  border-radius: 5px;
+  padding: 25px 25px 30px;
+}
+.wrapper h2 {
+  color: #4671ea;
+  font-size: 28px;
+  text-align: center;
+}
+
+.wrapper textarea {
+  width: 93%;
+  resize: none;
+  height: 59px;
+  outline: none;
+  padding: 15px;
+  font-size: 16px;
+  margin-top: 20px;
+  border-radius: 5px;
+  max-height: 330px;
+  caret-color: #4671ea;
+  border: 1px solid #bfbfbf;
+}
+textarea:is(:focus, :valid) {
+  border-color: #4671ea;
+  padding: 14px;
+  border-width: 2px;
+}
+textarea::-webkit-scrollbar {
+  width: 0px;
+}
 #response {
-  color: white;
+  color: black;
 }
 span {
   position: absolute;
@@ -50,5 +99,17 @@ span {
     width: 500px;
     height: 500px;
     opacity: 0;
+  }
+}
+
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
   }
 }
