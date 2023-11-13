@@ -9,7 +9,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <p class="text">GPT App by a broke boy :&#41;</p>
+        <p class="text">GPT-2 app :&#41;</p>
       </div>
       <div class="wrapper">
         <h2>Prompt Area</h2>
@@ -36,7 +36,6 @@
       const button = document.querySelector("button");
       button.addEventListener("click", function (e) {
         const rect = e.target.getBoundingClientRect();
-        // Calculate the ripple position relative to the button
         let x = e.clientX - rect.left;
         let y = e.clientY - rect.top;
         let ripples = document.createElement("span");
