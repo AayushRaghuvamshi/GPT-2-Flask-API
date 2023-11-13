@@ -7,6 +7,11 @@ tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
 model = GPT2LMHeadModel.from_pretrained("gpt2")
 
 
+@app.route('/')
+def index():
+    return app.send_static_file('index.html')
+
+
 @app.route('/generate', methods=['POST'])
 def generate_text():
     data = request.json
@@ -16,7 +21,7 @@ def generate_text():
         max_length=1000,
         num_return_sequences=1,
         temperature=0.5,
-        top_k=40,ss
+        top_k=40,
         top_p=0.9,
         no_repeat_ngram_size=2
     )
