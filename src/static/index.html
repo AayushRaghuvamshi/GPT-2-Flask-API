@@ -1,33 +1,47 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Text Generation</title>
-    <!-- Add some CSS for styling -->
-</head>
-<body>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
     <div>
-        <textarea id="prompt" placeholder="Enter your prompt"></textarea>
-        <button onclick="generateText()">Compute</button>
-        <div id="response"></div>
+      <textarea id="prompt" placeholder="Enter your prompt"></textarea>
+      <button onclick="generateText()">Compute</button>
+      <div id="response"></div>
     </div>
 
     <script>
-        function generateText() {
-            var prompt = document.getElementById('prompt').value;
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "/generate", true);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    var response = JSON.parse(xhr.responseText);
-                    document.getElementById('response').innerText = response.text;
-                }
-            };
-            var data = JSON.stringify({"text": prompt});
-            xhr.send(data);
-        }
+      function generateText() {
+        var prompt = document.getElementById("prompt").value;
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/generate", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            document.getElementById("response").innerText = response.text;
+          }
+        };
+        var data = JSON.stringify({ text: prompt });
+        xhr.send(data);
+      }
     </script>
-</body>
+    <script>
+      const button = document.querySelector("button");
+      button.addEventListener("click", function (e) {
+        let x = e.clientX - e.target.offsetLeft;
+        let y = e.clientY - e.target.offsetTop;
+        let ripples = document.createElement("span");
+        ripples.style.left = x + "px";
+        ripples.style.top = y + "px";
+        this.appendChild(ripples);
+        setTimeout(() => {
+          ripples.remove();
+        }, 1000);
+      });
+    </script>
+  </body>
 </html>
