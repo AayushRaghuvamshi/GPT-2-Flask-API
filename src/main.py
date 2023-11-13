@@ -13,9 +13,11 @@ def generate_text():
     inputs = tokenizer.encode(data['text'], return_tensors='pt')
     outputs = model.generate(
         inputs,
-        max_length=100,
+        max_length=1000,
         num_return_sequences=1,
-        temperature=0.7,
+        temperature=0.5,
+        top_k=40,ss
+        top_p=0.9,
         no_repeat_ngram_size=2
     )
 
