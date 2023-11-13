@@ -7,30 +7,38 @@
     <link rel="stylesheet" href="/static/styles.css" />
   </head>
   <body>
-    <div class="header">
-      <p class="text">GPT App by a broke boy :&#41;</p>
-    </div>
-    <div class="wrapper">
-      <h2>Prompt Area</h2>
-      <textarea id="prompt" placeholder="Enter your prompt" required></textarea>
-      <button onclick="generateText()">Compute</button>
-      <div id="response"></div>
+    <div class="container">
+      <div class="header">
+        <p class="text">GPT App by a broke boy :&#41;</p>
+      </div>
+      <div class="wrapper">
+        <h2>Prompt Area</h2>
+        <textarea
+          id="prompt"
+          placeholder="Enter your prompt"
+          required
+        ></textarea>
+        <button onclick="generateText()">Compute</button>
+        <div id="response"></div>
+      </div>
+      <div class="bubbles">
+        <img src="/static/images/bubble.png" />
+        <img src="/static/images/bubble.png" />
+        <img src="/static/images/bubble.png" />
+        <img src="/static/images/bubble.png" />
+        <img src="/static/images/bubble.png" />
+        <img src="/static/images/bubble.png" />
+        <img src="/static/images/bubble.png" />
+      </div>
     </div>
 
-    <script src="/static/componentScripts/responseHandler.js"></script>
-    <script>
-      const textarea = document.querySelector("textarea");
-      textarea.addEventListener("keyup", (e) => {
-        textarea.style.height = "auto";
-        let scHeight = e.target.scrollHeight;
-        textarea.style.height = `${scHeight}px`;
-      });
-    </script>
     <script>
       const button = document.querySelector("button");
       button.addEventListener("click", function (e) {
-        let x = e.clientX - e.target.offsetLeft;
-        let y = e.clientY - e.target.offsetTop;
+        const rect = e.target.getBoundingClientRect();
+        // Calculate the ripple position relative to the button
+        let x = e.clientX - rect.left;
+        let y = e.clientY - rect.top;
         let ripples = document.createElement("span");
         ripples.style.left = x + "px";
         ripples.style.top = y + "px";
@@ -38,6 +46,15 @@
         setTimeout(() => {
           ripples.remove();
         }, 1000);
+      });
+    </script>
+    <script src="/static/componentScripts/responseHandler.js"></script>
+    <script>
+      const textarea = document.querySelector("textarea");
+      textarea.addEventListener("keyup", (e) => {
+        textarea.style.height = "auto";
+        let scHeight = e.target.scrollHeight;
+        textarea.style.height = `${scHeight}px`;
       });
     </script>
   </body>
