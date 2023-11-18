@@ -1,5 +1,3 @@
-# LLMAPIProject
-
 # GPT-2 Flask API
 
 This project is a Flask-based web application that utilizes GPT-2, a language model by OpenAI, to generate text based on user input. It features a user-friendly interface and offers a unique experience with features like real-time typing effects.
