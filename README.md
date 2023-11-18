@@ -20,8 +20,8 @@ This project is a Flask-based web application that utilizes GPT-2, a language mo
 
 1. **Clone the repository**:
 
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/AayushRaghuvamshi/GPT-2-Flask-API.git
+cd GPT-2-Flask-API
 
 2. **Create and activate a virtual environment** (optional but recommended):
 
