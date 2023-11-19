@@ -20,17 +20,17 @@ This project is a Flask-based web application that utilizes GPT-2, a language mo
 
 1. **Clone the repository**:
 
-git clone https://github.com/AayushRaghuvamshi/GPT-2-Flask-API.git
-cd GPT-2-Flask-API
+- ```git clone https://github.com/AayushRaghuvamshi/GPT-2-Flask-API.git```
+- ```cd GPT-2-Flask-API```
 
 2. **Create and activate a virtual environment** (optional but recommended):
 
-python3 -m venv .venv
-source .venv/bin/activate # On Windows use .venv\Scripts\activate
+- ```python3 -m venv .venv```
+- ```source .venv/bin/activate # On Windows use .venv\Scripts\activate```
 
 3. **Install dependencies**:
 
-pip install -r requirements.txt
+- ```pip install -r requirements.txt```
 
 ## Running the Application
 
@@ -40,8 +40,8 @@ You can run the application either using Gunicorn in WSL (Windows Subsystem for 
 
 1. **Start the Flask app with Gunicorn**:
 
-cd src
-gunicorn -w 4 -b 0.0.0.0:5000 main:app
+- ```cd src```
+- ```gunicorn -w 4 -b 0.0.0.0:5000 main:app```
 
 2. **Access the application**:
 
@@ -51,8 +51,8 @@ gunicorn -w 4 -b 0.0.0.0:5000 main:app
 
 1. **Run the Flask app with Python**:
 
-cd src
-python3 main.py
+- ```cd src```
+- ```python3 main.py```
 
 2. **Access the application**:
 
