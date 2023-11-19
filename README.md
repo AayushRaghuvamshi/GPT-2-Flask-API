@@ -34,6 +34,10 @@ pip install -r requirements.txt
 
 ## Running the Application
 
+You can run the application either using Gunicorn in WSL (Windows Subsystem for Linux) or directly with Python on Windows.
+
+### Using Gunicorn in WSL
+
 1. **Start the Flask app with Gunicorn**:
 
 cd src
@@ -42,6 +46,19 @@ gunicorn -w 4 -b 0.0.0.0:5000 main:app
 2. **Access the application**:
 
 - Open your web browser and go to `http://localhost:5000`.
+
+### Directly on Windows
+
+1. **Run the Flask app with Python**:
+
+cd src
+python3 main.py
+
+2. **Access the application**:
+
+- Open your web browser and navigate to the URL output by the Flask server (usually `http://127.0.0.1:5000` or `http://localhost:5000`).
+
+Ensure you have all dependencies installed as per the instructions in the **Installation** section.
 
 ## Author
 
